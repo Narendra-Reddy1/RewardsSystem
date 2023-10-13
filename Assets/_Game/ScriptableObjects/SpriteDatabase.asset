@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5d3931753203b4596bfadb328f4567, type: 3}
+  m_Name: SpriteDatabase
+  m_EditorClassIdentifier: 
+  _rewardItemBgDictionary:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 21300000, guid: b2d6a95a977a1bd4e8535e0e858a3655, type: 3}
+    - Key: 1
+      Value: {fileID: 21300000, guid: 3b3c3dec779e2be479bea21d24917ff2, type: 3}
+  _goStateNoEarnedCurrencyBg: {fileID: 21300000, guid: cfe0ffc9775d6bb49b8c9c726df1381d, type: 3}

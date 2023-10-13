@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_button: {fileID: 5676865599523860312}
-  m_coolDownTimer: 0.75
+  m_coolDownTimer: 1
 --- !u!1 &5293813345118011372
 GameObject:
   m_ObjectHideFlags: 0

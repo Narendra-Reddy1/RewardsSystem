@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using System;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -89,7 +90,8 @@ public class MyUtils
         if (timeSpan.Days > 0)
             formattedString = timeSpan.ToString(@"d\d\ h\h");
         else if (timeSpan.Hours > 0)
-            formattedString = timeSpan.ToString(@"h\h\ m\m");
+            //formattedString = timeSpan.ToString(@"h\h\ m\m");
+            formattedString = timeSpan.ToString(@"hh\:mm\:ss");
         else
             formattedString = timeSpan.ToString(@"mm\:ss");
         return formattedString;
@@ -119,10 +121,9 @@ public class MyUtils
             return request.downloadHandler.text;
         }
     }
-    static Rect rect = new Rect();
     public static Sprite GetSpriteFromTexture(Texture2D texture)
     {
-        return Sprite.Create(texture, rect, Vector2.one * .5f);
+        return Sprite.Create(texture, new Rect(Vector2.zero, texture.Size()), Vector2.one * .5f);
     }
 
     /// <summary>

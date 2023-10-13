@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8302213487918426778}
   - component: {fileID: 9211456684767620854}
   - component: {fileID: 1877384830824486364}
-  - component: {fileID: 8968056685799464506}
+  - component: {fileID: 6501833254642836486}
+  - component: {fileID: 545142504982063020}
   m_Layer: 5
   m_Name: ClaimBtn
   m_TagString: Untagged
@@ -78,7 +79,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8968056685799464506
+--- !u!114 &6501833254642836486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 321990079470984193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: e6e5cf5bcacf221469816bd5120aef6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -97,7 +98,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -121,7 +122,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1877384830824486364}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 621230296019130898}
+        m_TargetAssemblyTypeName: RewardItem, Assembly-CSharp
+        m_MethodName: OnClickClaim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  clickAnimate: 1
+--- !u!114 &545142504982063020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321990079470984193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28586aebe8eca2d46910ea829fb8aa15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_button: {fileID: 6501833254642836486}
+  m_coolDownTimer: 0.75
 --- !u!1 &329503983514605850
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +161,7 @@ GameObject:
   - component: {fileID: 199806609056334699}
   - component: {fileID: 3494039714247035395}
   - component: {fileID: 1510312997858065652}
+  - component: {fileID: 7523161358635245394}
   m_Layer: 5
   m_Name: RewardImg
   m_TagString: Untagged
@@ -157,8 +186,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 39.114258}
-  m_SizeDelta: {x: 0, y: -191.3756}
+  m_AnchoredPosition: {x: 0, y: 35}
+  m_SizeDelta: {x: 0, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3494039714247035395
 CanvasRenderer:
@@ -188,7 +217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb88caaae20830a488fcf3c0ee3328b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8e76647bdd3910418fb7aa001071c8f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -198,6 +227,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7523161358635245394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329503983514605850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 1
+  m_ColorFactor: 1
+  m_BlurFactor: 1
+  m_EffectMode: 0
+  m_ColorMode: 0
+  m_BlurMode: 0
+  m_AdvancedBlur: 0
 --- !u!1 &875719910044709228
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8478873502952849954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -364,6 +412,7 @@ GameObject:
   - component: {fileID: 392394741481764842}
   - component: {fileID: 7287557582051086769}
   - component: {fileID: 3627960869161782311}
+  - component: {fileID: 747268041435085454}
   m_Layer: 5
   m_Name: TimerTxt
   m_TagString: Untagged
@@ -488,6 +537,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &747268041435085454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286937522176428475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c93342df0aefa340b0b7c27ffa0ce48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_timerTxt: {fileID: 3627960869161782311}
 --- !u!1 &1772914868720715985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +1076,7 @@ GameObject:
   - component: {fileID: 6047305938667892738}
   - component: {fileID: 8055912746566657756}
   - component: {fileID: 5086659753669757456}
+  - component: {fileID: 614639994214320663}
   m_Layer: 5
   m_Name: TimerTxt
   m_TagString: Untagged
@@ -1138,6 +1201,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &614639994214320663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8510801587622025362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c93342df0aefa340b0b7c27ffa0ce48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_timerTxt: {fileID: 5086659753669757456}
 --- !u!1 &8842730588229534865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,13 +1268,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f2d9d1f22d8da4a9e15a0bff118210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rewardBg: {fileID: 0}
-  _rewardImg: {fileID: 0}
-  _coolDownStatePanel: {fileID: 0}
-  _cooldownTimerTxt: {fileID: 0}
-  _cooldownTimerProgressbar: {fileID: 0}
-  _goStatePanel: {fileID: 0}
-  _claimTimerTxt: {fileID: 0}
-  _currencyCountTxt: {fileID: 0}
-  _currencyImg: {fileID: 0}
-  _claimStatePanel: {fileID: 0}
+  _rewardBg: {fileID: 4451795226023162484}
+  _rewardImg: {fileID: 1510312997858065652}
+  _rewardSpriteDatabase: {fileID: 11400000, guid: 30de9d25897696b418168fef00e8a1fc, type: 2}
+  _uiEffect: {fileID: 7523161358635245394}
+  _coolDownStatePanel: {fileID: 1234334325844663409}
+  _cooldownTimerTxt: {fileID: 3627960869161782311}
+  _cooldownTimerProgressbar: {fileID: 4935595646185566493}
+  _cooldownTimer: {fileID: 747268041435085454}
+  _goStatePanel: {fileID: 4475631564495836593}
+  _claimTimerTxt: {fileID: 5086659753669757456}
+  _currencyCountTxt: {fileID: 4568200031013867192}
+  _currencyImg: {fileID: 377074611603815711}
+  _goStateTimer: {fileID: 614639994214320663}
+  _claimStatePanel: {fileID: 321990079470984193}

@@ -470,13 +470,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8775866539223395516}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 8874951045968600332}
+        m_TargetAssemblyTypeName: RewardsPanelPopup, Assembly-CSharp
+        m_MethodName: OnClickSubtractCurrency
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -944,6 +944,7 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _rewardsParent: {fileID: 1802769714013410981}
+  _rewardSpriteDatabase: {fileID: 11400000, guid: 30de9d25897696b418168fef00e8a1fc, type: 2}
   data:
     status: 
     rewards: []
