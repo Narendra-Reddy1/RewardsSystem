@@ -1,7 +1,6 @@
 using Cysharp.Threading.Tasks;
 using System;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -123,7 +122,7 @@ public class MyUtils
     }
     public static Sprite GetSpriteFromTexture(Texture2D texture)
     {
-        return Sprite.Create(texture, new Rect(Vector2.zero, texture.Size()), Vector2.one * .5f);
+        return Sprite.Create(texture, new Rect(Vector2.zero, new Vector2(texture.width, texture.height)), Vector2.one * .5f);
     }
 
     /// <summary>

@@ -1,9 +1,6 @@
 using BenStudios.ScreenManagement;
 using Coffee.UIEffects;
 using DG.Tweening;
-using SovereignStudios.EventSystem;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,6 +32,7 @@ public class RewardItem : MonoBehaviour
     [Space(10)]
     [Header("Claim State")]
     [SerializeField] private GameObject _claimStatePanel;
+    [SerializeField] private Transform _rewardImgHopRefPose;
 
     private Vector3 _rewardImgEuler = Vector3.zero;
     private Reward _myRewardData;
@@ -57,10 +55,8 @@ public class RewardItem : MonoBehaviour
         _myRewardData = reward;
         _UpdateState(System.Enum.Parse<Status>(_myRewardData.status, true));
         Texture2D tex = await MyUtils.GetTextureFromUrl(_myRewardData.image);
-        MyUtils.Log($"TexName:::{tex}");
         Sprite sprite = MyUtils.GetSpriteFromTexture(tex);
         _rewardImg.sprite = sprite;
-        MyUtils.Log($"SpriteName:::{sprite}");
         Texture2D tex1 = await MyUtils.GetTextureFromUrl(_myRewardData.currency_image);
         Sprite sprite1 = MyUtils.GetSpriteFromTexture(tex1);
         _currencyImg.sprite = sprite1;
@@ -68,7 +64,7 @@ public class RewardItem : MonoBehaviour
     public void OnClickClaim()
     {
         ScreenManager.Instance.ChangeScreen(Window.CollectRewardsPopup, ScreenType.Additive, false);
-        _UpdateState(Status.cooling);
+        MyUtils.DelayedCallback(.75f, _UpdateState, Status.cooling);
     }
     public void DeductCurrency(int currency)
     {
@@ -137,7 +133,8 @@ public class RewardItem : MonoBehaviour
     {
         _claimStatePanel.SetActive(true);
         _rewardImg.transform.DOKill();
-        _rewardImg.transform.DOMoveY(_rewardImg.transform.position.y + 30, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+        _rewardImg.transform.DOMoveY(_rewardImgHopRefPose.position.y, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+
 
     }
     private void _UpdateState(Status status)

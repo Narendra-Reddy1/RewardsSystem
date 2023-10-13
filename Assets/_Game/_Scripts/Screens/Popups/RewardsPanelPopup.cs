@@ -1,7 +1,5 @@
 using BenStudios.ScreenManagement;
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -11,6 +9,7 @@ public class RewardsPanelPopup : PopupBase
     [SerializeField] private string _jsonDataApiUrl = "https://epicmindarena.com/inteview_api/get_hourly_rewards_2.json";
     [SerializeField] private AssetReferenceGameObject _rewardItem;
     [SerializeField] private Transform _rewardsParent;
+    [SerializeField] private GameObject _loadingScreen;
     [SerializeField] private SpriteDatabase _rewardSpriteDatabase;
     // [SerializeField] private TextMeshProUGUI _subtractBtnTxt;
     [SerializeField] RewardData data;
@@ -45,6 +44,7 @@ public class RewardsPanelPopup : PopupBase
     #region Private Methods
     private async void _Init()
     {
+        
         // _subtractBtnTxt.SetText($"Subtract {CURRENCY_TO_DEDUCT} currencies");
         string jsonData = await MyUtils.GetJsonDataFromUrl(_jsonDataApiUrl);
         data = MyUtils.GetObjectFromJsonString<RewardData>(jsonData);
@@ -58,6 +58,7 @@ public class RewardsPanelPopup : PopupBase
                 _rewardItemsList.Add(rewardItem);
             });
         }
+        
     }
 
     #endregion Private Methods
