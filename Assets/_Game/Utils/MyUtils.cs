@@ -1,6 +1,8 @@
 using Cysharp.Threading.Tasks;
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 
@@ -34,7 +36,7 @@ public class MyUtils
 
 
     }
-    public static string GetJsonStringForTheObject<T>(T data)
+    public static string GetJsonStringFromTheObject<T>(T data)
     {
         return JsonUtility.ToJson(data);
     }
@@ -91,6 +93,31 @@ public class MyUtils
         else
             formattedString = timeSpan.ToString(@"mm\:ss");
         return formattedString;
+    }
+
+    public static async Task<Texture2D> GetTextureFromUrl(string url)
+    {
+        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(url))
+        {
+            UnityWebRequestAsyncOperation asyncOp = request.SendWebRequest();
+            while (!asyncOp.isDone)
+            {
+                await Task.Yield();
+            }
+            return ((DownloadHandlerTexture)request.downloadHandler).texture;
+        }
+    }
+    public static async Task<string> GetJsonDataFromUrl(string url)
+    {
+        using (UnityWebRequest request = UnityWebRequest.Get(url))
+        {
+            UnityWebRequestAsyncOperation asyncOp = request.SendWebRequest();
+            while (!asyncOp.isDone)
+            {
+                await Task.Yield();
+            }
+            return request.downloadHandler.text;
+        }
     }
 
     /// <summary>

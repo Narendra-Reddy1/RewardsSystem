@@ -170,7 +170,7 @@ public class AddressableAssetLoader : AddressableAssetLocationsLoader
 
         if (obj.RuntimeKeyIsValid())
         {
-            var async = Addressables.InstantiateAsync(obj, parent, instantiateInWorldSpace);
+            AsyncOperationHandle<GameObject> async = Addressables.InstantiateAsync(obj, parent, instantiateInWorldSpace);
             await async.Task;
             // Debug.Log("Instantiate  valid key");
             if (async.Status == AsyncOperationStatus.Succeeded)

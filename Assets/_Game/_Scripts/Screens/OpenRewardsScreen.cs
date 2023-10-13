@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class OpenRewardsScreen : ScreenBase
 {
+
+
+
     public void OnClickOpenRewards()
     {
-        ScreenManager.Instance.ChangeScreen(Window.RewardPanelPopup,ScreenType.Additive);
+        ScreenManager.Instance.ChangeScreen(Window.RewardPanelPopup, ScreenType.Additive);
+
+
     }
+
+
 }
