@@ -937,12 +937,16 @@ MonoBehaviour:
   popupPanel: {fileID: 7920496688495267995}
   transparentBGCanvasGroup: {fileID: 399452041561138692}
   popupPanelCanvasGroup: {fileID: 8093155285757910816}
+  _jsonDataApiUrl: https://epicmindarena.com/inteview_api/get_hourly_rewards_2.json
   _rewardItem:
     m_AssetGUID: a8a3ccaf89580174b9a9f7bd4e2b366f
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _rewardsParent: {fileID: 1802769714013410981}
+  data:
+    status: 
+    rewards: []
 --- !u!1 &8933465283621272622
 GameObject:
   m_ObjectHideFlags: 0

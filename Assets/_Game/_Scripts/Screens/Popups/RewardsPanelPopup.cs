@@ -11,7 +11,7 @@ public class RewardsPanelPopup : PopupBase
     [SerializeField] private AssetReferenceGameObject _rewardItem;
     [SerializeField] private Transform _rewardsParent;
 
-    [SerializeField] RewardsData data;
+    [SerializeField] RewardData data;
     private List<GameObject> _rewardItemsList = new();
     #endregion Varibales
 
@@ -35,8 +35,8 @@ public class RewardsPanelPopup : PopupBase
     private async void _Init()
     {
         string jsonData = await MyUtils.GetJsonDataFromUrl(_jsonDataApiUrl);
-        data = MyUtils.GetObjectFromJsonString<RewardsData>(jsonData);
-        foreach (Rewards reward in data.rewards)
+        data = MyUtils.GetObjectFromJsonString<RewardData>(jsonData);
+        foreach (Reward reward in data.rewards)
         {
             AddressableAssetLoader.Instance.Instantiate(_rewardItem, _rewardsParent, true, (status, handle) =>
             {
@@ -54,14 +54,14 @@ public class RewardsPanelPopup : PopupBase
 }
 
 [System.Serializable]
-public class RewardsData
+public class RewardData
 {
     public string status;
-    public List<Rewards> rewards;
+    public List<Reward> rewards;
 }
 
 [System.Serializable]
-public class Rewards
+public class Reward
 {
     public int id;
     public string image;

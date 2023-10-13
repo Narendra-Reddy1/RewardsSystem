@@ -119,6 +119,11 @@ public class MyUtils
             return request.downloadHandler.text;
         }
     }
+    static Rect rect = new Rect();
+    public static Sprite GetSpriteFromTexture(Texture2D texture)
+    {
+        return Sprite.Create(texture, rect, Vector2.one * .5f);
+    }
 
     /// <summary>
     /// For executing all Coroutines in which EXACTLY one argument needs to be passed, call this method
