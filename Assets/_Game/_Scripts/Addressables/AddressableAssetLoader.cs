@@ -175,7 +175,7 @@ public class AddressableAssetLoader : AddressableAssetLocationsLoader
             // Debug.Log("Instantiate  valid key");
             if (async.Status == AsyncOperationStatus.Succeeded)
             {
-                OnCompleted.Invoke(true, async);
+                OnCompleted?.Invoke(true, async);
                 return;
             }
         }

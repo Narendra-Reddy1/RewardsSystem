@@ -8,7 +8,10 @@ namespace BenStudios.ScreenManagement
 {
     public class ScreenManager : MonoBehaviour
     {
+        #region SINGLETON
         public static ScreenManager Instance;
+        #endregion SINGLETON
+
         public static Action<Window> OnScreenChange = null;
         [SerializeField] SerializedDictionary<Window, WindowAddressableObject> m_Screens = null;
         [Tooltip("Canvas parent for UI objects")]

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 438299c3e67714c439487fb674325093
+  m_SerializeEntries:
+  - m_GUID: 5d9ff987a6795084399c969bd140c28a
+    m_Address: Assets/_Game/Prefabs/Screens/OpenRewardsScreen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5c6a6dc6b5e8384c9a8e120137dcb8e
+    m_Address: Assets/_Game/Prefabs/Screens/RewardsPanelPopup.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: baa9a9bd4dbb73c4b84252820e4b6761
+    m_Address: Assets/_Game/Prefabs/Screens/RewardsCollectPopup.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8a3ccaf89580174b9a9f7bd4e2b366f
+    m_Address: Assets/_Game/Prefabs/RewardItem.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 87892de70a548314bb6a95d7f1e2e6c9, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1423eab918ba14b4d84ca58b64a50d50, type: 2}
+    - {fileID: 11400000, guid: 3d22ceca9e71bba4e89e66265370910f, type: 2}

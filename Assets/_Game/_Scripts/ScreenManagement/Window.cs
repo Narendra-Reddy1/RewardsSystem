@@ -8,24 +8,9 @@ namespace BenStudios.ScreenManagement
     public enum Window
     {
         None,
-        Dashboard,
-        GameplayScreen,
-        SettingsPopup,
-        PowerupTutorialPopup,
-        GameplayTutorialPopup,
-        ExitConfirmationPopup,
-        ScoreBoardScreen,
-        GenericPowerupTutorialPopup,
-        StoreScreen,
-        PurchaseStatusScreen,
-        ChestRewardScreen,
-        LevelCompleteScreeen,
-        PowerupPurchasePopup,
-        SupportDevSuccessScreen,
-        SupportDevAskScreen,
-        Console,
-        OutOfTimePopup,
-        HowToPlayInfoPopup,
+        OpenRewardsScreen,
+        RewardPanelPopup,
+        CollectRewardsPopup,
     }
 
     [System.Serializable]
