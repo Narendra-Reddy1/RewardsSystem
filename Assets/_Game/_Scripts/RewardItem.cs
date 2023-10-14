@@ -53,13 +53,15 @@ public class RewardItem : MonoBehaviour
     public async void Init(Reward reward)
     {
         _myRewardData = reward;
-        _UpdateState(System.Enum.Parse<Status>(_myRewardData.status, true));
         Texture2D tex = await MyUtils.GetTextureFromUrl(_myRewardData.image);
         Sprite sprite = MyUtils.GetSpriteFromTexture(tex);
-        _rewardImg.sprite = sprite;
+        if (_rewardImg != null && sprite != null)
+            _rewardImg.sprite = sprite;
         Texture2D tex1 = await MyUtils.GetTextureFromUrl(_myRewardData.currency_image);
         Sprite sprite1 = MyUtils.GetSpriteFromTexture(tex1);
-        _currencyImg.sprite = sprite1;
+        if (_currencyImg != null && sprite1 != null)
+            _currencyImg.sprite = sprite1;
+        _UpdateState(System.Enum.Parse<Status>(_myRewardData.status, true));
     }
     public void OnClickClaim()
     {
@@ -91,7 +93,6 @@ public class RewardItem : MonoBehaviour
         _cooldownTimer.StartTimer();
         _cooldownTimer.OnTimerTick += _UpdateFillBar;
         _cooldownTimer.OnTimerComplete += OnCooldownTimerComplete;
-
     }
     void OnCooldownTimerComplete()
     {
@@ -133,8 +134,8 @@ public class RewardItem : MonoBehaviour
     {
         _claimStatePanel.SetActive(true);
         _rewardImg.transform.DOKill();
-        _rewardImg.transform.DOMoveY(_rewardImgHopRefPose.position.y, 1f).SetDelay(1.25f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
-
+        _rewardImg.transform.DOMove(_rewardImgHopRefPose.position, 1f).SetLoops(-1, LoopType.Yoyo);
+       
 
     }
     private void _UpdateState(Status status)
