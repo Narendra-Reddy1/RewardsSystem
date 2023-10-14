@@ -133,7 +133,7 @@ public class RewardItem : MonoBehaviour
     {
         _claimStatePanel.SetActive(true);
         _rewardImg.transform.DOKill();
-        _rewardImg.transform.DOMoveY(_rewardImgHopRefPose.position.y, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+        _rewardImg.transform.DOMoveY(_rewardImgHopRefPose.position.y, 1f).SetDelay(1.25f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
 
 
     }

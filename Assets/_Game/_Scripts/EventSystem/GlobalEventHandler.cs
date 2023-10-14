@@ -6,8 +6,6 @@
 using System;
 using System.Collections.Generic;
 
-namespace SovereignStudios.EventSystem
-{
     // These are callbacks (delegates) that can be used by the messengers defined in EventHandler class below
     public delegate void Callback(Object arg);
 
@@ -75,6 +73,7 @@ namespace SovereignStudios.EventSystem
     }
     public enum EventID
     {
-        Event_On_Subtract_Currency_Requested,
+        EVENT_ON_SUBTRACT_CURRENCY_REQUESTED,
+        REQUEST_TO_PLAY_SFX,
+        REQUEST_TO_PLAY_BGM,
     }
-}

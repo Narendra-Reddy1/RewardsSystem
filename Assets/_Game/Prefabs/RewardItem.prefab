@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1877384830824486364}
   - component: {fileID: 6501833254642836486}
   - component: {fileID: 545142504982063020}
+  - component: {fileID: 8080771927628385805}
   m_Layer: 5
   m_Name: ClaimBtn
   m_TagString: Untagged
@@ -150,6 +151,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_button: {fileID: 6501833254642836486}
   m_coolDownTimer: 0.75
+--- !u!114 &8080771927628385805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321990079470984193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d76d2ca253d0294faa7ed1ea33470b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioID: 0
 --- !u!1 &329503983514605850
 GameObject:
   m_ObjectHideFlags: 0

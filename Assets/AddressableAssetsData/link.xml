@@ -1,5 +1,6 @@
 <linker>
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="AudioButton" preserve="all" />
     <type fullname="BenStudios.ButtonCooldown" preserve="all" />
     <type fullname="CollectRewardsPopup" preserve="all" />
     <type fullname="CustomButton" preserve="all" />
